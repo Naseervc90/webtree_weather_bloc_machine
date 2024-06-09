@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_bloc/routes.dart';
 import 'package:weather_bloc/ui/widget/weather_display_widget.dart';
 
 import '../../bloc/weather_bloc/weather_bloc.dart'; // Import the WeatherBloc
@@ -44,7 +45,8 @@ class LocationSelectionScreen extends StatelessWidget {
                               onTap: () {
                                 BlocProvider.of<WeatherBloc>(context)
                                     .add(FetchWeatherData(city: city));
-                                Navigator.pushNamed(context, '/weather');
+                                Navigator.pushNamed(
+                                    context, Routes.weatherRoute);
                               },
                             );
                           })),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_bloc/routes.dart';
 import '../../bloc/weather_bloc/weather_bloc.dart'; // Import the WeatherBloc
 
 class LocationSearchWidget extends StatefulWidget {
@@ -47,7 +48,7 @@ class _LocationSearchWidgetState extends State<LocationSearchWidget> {
               final city = _searchController.text.trim();
               BlocProvider.of<WeatherBloc>(context)
                   .add(FetchWeatherData(city: city));
-              Navigator.pushNamed(context, '/weather');
+              Navigator.pushNamed(context, Routes.weatherRoute);
             },
           ),
         ),

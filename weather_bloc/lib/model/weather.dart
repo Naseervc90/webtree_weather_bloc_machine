@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 class Weather {
   final String cityName;
   final double currentTemperature;
@@ -20,7 +22,8 @@ class Weather {
   });
 
   factory Weather.fromJson(Map<String, dynamic> json) {
-    final cityName = json['name'];
+    final cityName = json['name'] ?? 'Unknown city';
+    log(cityName);
     final weatherData = json['weather'][0];
     final mainData = json['main'];
     final windData = json['wind'];

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_bloc/consts.dart';
 
 import '../../model/weather.dart'; // Import the Weather model
 
@@ -26,7 +27,7 @@ class WeatherDisplayWidget extends StatelessWidget {
         ),
         const SizedBox(width: 16),
         Image.network(
-          'https://openweathermap.org/img/w/${weatherData.weatherIcon}.png',
+          '${Constants.weatherIconUrl + weatherData.weatherIcon}.png',
           color: const Color(0xff6c64fb), // Replace with the actual icon URL
           width: 64,
           height: 64,
