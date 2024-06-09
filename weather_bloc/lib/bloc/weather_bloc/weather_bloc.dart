@@ -1,11 +1,9 @@
 import 'dart:async';
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
-
-import '../../model/weather.dart';
-// Import the Weather model
+import '../../model/weather.dart'; // Import the Weather model
 
 part 'weather_event.dart';
 part 'weather_state.dart';
@@ -22,7 +20,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     emit(WeatherLoading());
 
     try {
-      final apiKey =
+      const apiKey =
           '76221058f78c859182087f1184f6e12a'; // Replace with your actual API key
       final url =
           'https://api.openweathermap.org/data/2.5/weather?q=${event.city}&appid=$apiKey&units=metric';
@@ -32,7 +30,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         final weatherData = Weather.fromJson(jsonDecode(response.body));
         emit(WeatherLoaded(weatherData: weatherData));
       } else {
-        emit(WeatherError(errorMessage: 'Failed to fetch weather data'));
+        emit(const WeatherError(errorMessage: 'Failed to fetch weather data'));
       }
     } catch (e) {
       emit(WeatherError(errorMessage: 'An error occurred: $e'));

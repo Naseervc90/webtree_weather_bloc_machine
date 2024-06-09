@@ -1,14 +1,14 @@
 class City {
   static const List<String> cities = [
-    'Munnar',
+    'mangalore',
     'Kannur',
-    'Bengaluru'
-        'Munnar',
+    'Bengaluru',
+    'Kolkata',
+    'Mumbai',
+    'Chennai',
+    'Munnar',
     'Ooty',
     'Kodai Kanal',
-    'Chennai',
-    'Mumbai',
-    'Kolkata',
     'Coorg',
     // Add more cities as needed
   ];
